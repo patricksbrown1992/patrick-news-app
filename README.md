@@ -10,7 +10,7 @@
 
 Uses NewsAPI
 
-Responsive- 
+# Responsive
 
 ## Desktop-
 
@@ -26,3 +26,8 @@ Responsive-
 ## Phone-
 
 ![phone](/public/Phone.png)
+
+
+# Warning
+
+basic level NewsAPI does not work on Github pages. Clicking the button will not fetch articles
