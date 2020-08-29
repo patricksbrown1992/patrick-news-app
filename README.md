@@ -12,11 +12,17 @@ Uses NewsAPI
 
 Responsive- 
 
-Desktop-
+## Desktop-
+
 ![desktop](/public/Desktop.png)
 
-Tablet-
+
+## Tablet-
+
 ![tablet](/public/Tablet.png)
 
-Phone-
+
+
+## Phone-
+
 ![phone](/public/Phone.png)
