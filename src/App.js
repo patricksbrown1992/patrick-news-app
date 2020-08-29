@@ -23,10 +23,7 @@ class App extends React.Component {
     }
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    this.fetchArticles(this.state.search).then(articles => (this.receiveArticles(articles)))
-  }
+
 
   receiveArticles(articles){
     let arr = [];
@@ -35,9 +32,11 @@ class App extends React.Component {
     while(i < articles.articles.length-1){
       let first_article = articles.articles[i];
       let second_article = articles.articles[i+1];
-  
-    let div_1 = <div id={i} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${first_article.urlToImage})`}}></div><div className = 'article-div-lower'><div className='article-title'>{first_article.title}</div><br /> <div className='article-desc'>{first_article.description}</div><a href="google.com">Read More</a></div></div>
-      let div_2 = <div id={i} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${second_article.urlToImage})`}}></div><div className = 'article-div-lower'><div className='article-title'>{second_article.title} </div><br /> <div className='article-desc'>{second_article.description}</div><a href="google.com">Read More</a></div></div>
+    
+
+      // Regex removes any html elements in title or description
+      let div_1 = <div key={i} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${first_article.urlToImage})`}}></div><div className = 'article-div-lower'><h3 className='article-title'>{first_article.title.replace(/(<([^>]+)>)/ig, "")}</h3> <h4 className='article-desc'>{first_article.description.replace(/(<([^>]+)>)/ig, "")}</h4><a href={first_article.url} target="_blank">Read More</a></div></div>
+      let div_2 = <div key={i+1} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${second_article.urlToImage})`}}></div><div className = 'article-div-lower'><h3 className='article-title'>{second_article.title.replace(/(<([^>]+)>)/ig, "")} </h3><h4 className='article-desc'>{second_article.description.replace(/(<([^>]+)>)/ig, "")}</h4><a href={second_article.url} target="_blank">Read More</a></div></div>
       let combined_div = <div className='combined-div'>{div_1}{div_2}</div>
       arr.push(combined_div)
       i += 2;
@@ -50,7 +49,9 @@ class App extends React.Component {
   }
 
   getArticles(){
+    // If this is a generic search or a search for a specific topic
     if(this.state.search.length){
+      // what is it sorted by
       if(this.state.select.length){
         return $.ajax({
         
@@ -82,31 +83,39 @@ class App extends React.Component {
   }
 
   fetchArticles(){
+    // get articles then take the articles and put them in local state
     this.getArticles().then(articles => (this.receiveArticles(articles)))
   }
 
   updateSelect(e){
+    // update the sort by drop down
     this.setState({select: e.target.value})
   }
 
 
   render(){
-
-   
+    let article_className;
+   if(!this.state.articles.length){
+    article_className='';
+   } else {
+    article_className= 'articles-div';
+   }
     return (
       <div className="App">
-        <h1>Patrick News App</h1>
-        <div>
+        <h1>Patrick Brown News App</h1>
+        <h2>Read all about it</h2>
+        <div className='upper-body'>
           <input type="text" className='search-bar' value={this.state.seach} placeholder='search' onChange={this.handleChange()} />
           <select onChange={this.updateSelect} name="sort-by" value={this.state.select} id="sort-by">
-            <option value="">None</option>
+            <option value=''>Sort By</option>
+            <option value=' '>None</option>
             <option value="relevancy">Relevance</option>
             <option value="publishedAt">Date</option>
             <option value="popularity">Popularity</option>
-        </select>
-          <button className='search-button' onClick={this.fetchArticles}>submit</button>
+          </select>
+          <button className='search-button' onClick={this.fetchArticles}>Submit</button>
         </div>
-        <div className='articles-div'>{this.state.articles}</div>
+        <div className={article_className}>{this.state.articles}</div>
         
       </div>
     );
