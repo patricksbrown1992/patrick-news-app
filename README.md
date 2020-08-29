@@ -8,7 +8,7 @@
 
 
 ## How to Run
-I tried to host it on Heroku or Github Pages. The basic level of the NewsAPI doesn't allow that. On download, run "npm start"
+I tried to host it on Heroku or Github Pages. The basic level of the NewsAPI doesn't allow that. On download, run "npm install" then "npm start". Go to http://localhost:3000/ if it doesn't automatically start up for you
 
 ## Features
 

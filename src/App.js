@@ -19,7 +19,7 @@ class App extends React.Component {
   handleChange() {
 
     return (e) => {
-        this.setState({ search: e.target.value })
+        this.setState({ search: e.target.value });
     }
   }
 
@@ -35,16 +35,16 @@ class App extends React.Component {
     
 
       // Regex removes any html elements in title or description
-      let div_1 = <div key={i} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${first_article.urlToImage})`}}></div><div className = 'article-div-lower'><h3 className='article-title'>{first_article.title.replace(/(<([^>]+)>)/ig, "")}</h3> <h4 className='article-desc'>{first_article.description.replace(/(<([^>]+)>)/ig, "")}</h4><a href={first_article.url} target="_blank">Read More</a></div></div>
-      let div_2 = <div key={i+1} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${second_article.urlToImage})`}}></div><div className = 'article-div-lower'><h3 className='article-title'>{second_article.title.replace(/(<([^>]+)>)/ig, "")} </h3><h4 className='article-desc'>{second_article.description.replace(/(<([^>]+)>)/ig, "")}</h4><a href={second_article.url} target="_blank">Read More</a></div></div>
-      let combined_div = <div className='combined-div'>{div_1}{div_2}</div>
-      arr.push(combined_div)
+      let div_1 = <div key={i} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${first_article.urlToImage})`}}></div><div className = 'article-div-lower'><h3 className='article-title'>{first_article.title.replace(/(<([^>]+)>)/ig, "")}</h3> <h4 className='article-desc'>{first_article.description.replace(/(<([^>]+)>)/ig, "")}</h4><a href={first_article.url} target="_blank">Read More</a></div></div>;
+      let div_2 = <div key={i+1} className='article-div'><div className = 'article-div-upper' style={{ 'backgroundImage': `url(${second_article.urlToImage})`}}></div><div className = 'article-div-lower'><h3 className='article-title'>{second_article.title.replace(/(<([^>]+)>)/ig, "")} </h3><h4 className='article-desc'>{second_article.description.replace(/(<([^>]+)>)/ig, "")}</h4><a href={second_article.url} target="_blank">Read More</a></div></div>;
+      let combined_div = <div className='combined-div'>{div_1}{div_2}</div>;
+      arr.push(combined_div);
       i += 2;
 
     }
 
 
-    this.setState({articles: arr})
+    this.setState({articles: arr});
   
   }
 
@@ -84,12 +84,12 @@ class App extends React.Component {
 
   fetchArticles(){
     // get articles then take the articles and put them in local state
-    this.getArticles().then(articles => (this.receiveArticles(articles)))
+    this.getArticles().then(articles => (this.receiveArticles(articles)));
   }
 
   updateSelect(e){
     // update the sort by drop down
-    this.setState({select: e.target.value})
+    this.setState({select: e.target.value});
   }
 
 
