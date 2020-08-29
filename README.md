@@ -6,6 +6,10 @@
 ## Overview
     Grab articles by topic so you can stay informed
 
+
+## How to Run
+I tried to host it on Heroku or Github Pages. The basic level of the NewsAPI doesn't allow that. On download, run "npm start"
+
 ## Features
 
 Uses NewsAPI
@@ -28,6 +32,5 @@ Uses NewsAPI
 ![phone](/public/Phone.png)
 
 
-# Warning
 
-basic level NewsAPI does not work on Github pages. Clicking the button will not fetch articles
+

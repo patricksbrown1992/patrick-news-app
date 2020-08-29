@@ -5,7 +5,7 @@ import $ from 'jquery';
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {loaded: false, articles: [], search: '', select: ''};
+    this.state = {articles: [], search: '', select: ''};
     this.getArticles = this.getArticles.bind(this);
     this.receiveArticles = this.receiveArticles.bind(this);
     this.fetchArticles = this.fetchArticles.bind(this);
