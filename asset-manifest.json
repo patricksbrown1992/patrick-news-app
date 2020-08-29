@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/patrick-news-app/static/css/main.4e49e6f7.chunk.css",
+    "main.js": "/patrick-news-app/static/js/main.53c58ec1.chunk.js",
+    "main.js.map": "/patrick-news-app/static/js/main.53c58ec1.chunk.js.map",
+    "runtime-main.js": "/patrick-news-app/static/js/runtime-main.1e14bfb8.js",
+    "runtime-main.js.map": "/patrick-news-app/static/js/runtime-main.1e14bfb8.js.map",
+    "static/js/2.5d29db61.chunk.js": "/patrick-news-app/static/js/2.5d29db61.chunk.js",
+    "static/js/2.5d29db61.chunk.js.map": "/patrick-news-app/static/js/2.5d29db61.chunk.js.map",
+    "index.html": "/patrick-news-app/index.html",
+    "precache-manifest.cd4109e44f13fad4ff9bab260a4d74f2.js": "/patrick-news-app/precache-manifest.cd4109e44f13fad4ff9bab260a4d74f2.js",
+    "service-worker.js": "/patrick-news-app/service-worker.js",
+    "static/css/main.4e49e6f7.chunk.css.map": "/patrick-news-app/static/css/main.4e49e6f7.chunk.css.map",
+    "static/js/2.5d29db61.chunk.js.LICENSE.txt": "/patrick-news-app/static/js/2.5d29db61.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e14bfb8.js",
+    "static/js/2.5d29db61.chunk.js",
+    "static/css/main.4e49e6f7.chunk.css",
+    "static/js/main.53c58ec1.chunk.js"
+  ]
+}
